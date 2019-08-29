@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
-from config import password
+from config import password, username
 
 app = Flask(__name__)
 
