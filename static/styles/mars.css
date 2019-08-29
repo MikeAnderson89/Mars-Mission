@@ -1,0 +1,57 @@
+#title {
+  color:#d64727;
+  text-shadow: 1px 1px 2px black
+}
+
+html{
+  background-color: #363333;
+}
+
+#button{
+  background-color: #ab381f;
+  border-color: #7a2816;
+  box-shadow: 1px 1px 2px black;
+}
+
+.jumbotron{
+  background-color: #474343;
+}
+
+#latest_mars_news{
+  color: #ab381f;
+}
+
+#featured_image{
+  width: 100%;
+  max-width: 5000px;
+  height: auto;
+  position: relative;
+}
+
+.dataframe{
+  text-align: center;
+  column-span: all;
+}
+
+#fact_table{
+  text-align: center;
+  column-span: all;
+}
+
+.hemisphere{
+  max-width: 500px;
+  height: auto;
+}
+
+#cerberus{
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  position: relative;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Facts</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='../static/styles/mars.css') }}">
+</head>
+
+<body>
+  <div class='jumbotron text-center'>
+    <h1 id='title'>Mars Facts</h1>
+    <p><a class='btn btn-primary btn-lg' href='/scrape' role='button' id='button'>Get Updated News</a></p>
+  </div>
+
+  <div class='row' id='mars_news'>
+    <div class='col-md-12'>
+      <h3 id='latest_mars_news' style='padding: 50px 0px 0px 30px'>Latest Mars News</h3>
+      <h4 class='heading' id='headline' style='padding: 0px 50px 0px 30px'>{{mars_data.headline}}</h4>
+      <p id='paragraph' style='padding: 0px 50px 0px 30px'>{{mars_data.paragraph}}</p>
+    </div>
+    <div class='col-md-12'>
+      <div class='row' id='picture'>
+        <div class='img-responsive col-md-7'>
+          <h3 id='featured_image_title' style='padding: 50px 50px 0px 30px'>Featured Image</h3>
+          <img src={{mars_data.featured_image}} margin=auto id='featured_image' style='padding: 0px 50px 0px 30px'>
+        </div>
+        <div class='col-md-2'>
+        </div>
+        <div class='col-md-5' id='weather' style='padding: 100px 0px 0px 0px'>
+          <h4>Current Weather on Mars</h4>
+          <p style='padding: 25px 50px 0px 0px'>{{mars_data.weather}}</p>
+          <div id='table' class='dataframe' style='padding: 25px 30px 0px 0px'>
+            {{mars_data.facts | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='container' style='padding: 75px 0px 0px 0px'>
+    <div class='row'>
+      <div class='col-md-6 text-center rounded mx-auto d-block'>
+        <div class='thumbnail'>
+          <img src={{mars_data.hemispheres[0].img_url}}>
+          <p>{{mars_data.hemispheres[0].title}}</p>
+        </div>
+        <div class='caption'>
+          <h4>Cerberus</h4>
+        </div>
+      </div>
+      <div class="col-md-6 text-center rounded mx-auto d-block">
+        <div class="thumbnail">
+          <img src={{mars_data.hemispheres[1].img_url}} margin=auto id='schiaparelli'>
+          <p>{{mars_data.hemispheres[1].title}}</p>
+        </div>
+        <div class='caption'>
+          <h4>Schiaparelli</h4>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-6 text-center rounded mx-auto d-block'>
+          <div class="thumbnail">
+            <img src={{mars_data.hemispheres[2].img_url}} margin=auto id='syrtis'>
+            <p>{{mars_data.hemispheres[2].title}}</p>
+          </div>
+          <div class='caption'>
+            <h4>Syrtis Major</h4>
+          </div>
+        </div>
+        <div = class='col-md-6 text-center rounded mx-auto d-block'>
+          <div class="thumbnail">
+            <img src={{mars_data.hemispheres[3].img_url}} margin=auto id='valles'>
+            <p>{{mars_data.hemispheres[3].title}}</p>
+          </div>
+          <div class="caption">
+            <h4>Valles Marineris</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+
+</html>
