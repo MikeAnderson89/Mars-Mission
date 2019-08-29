@@ -4,7 +4,7 @@ from config import password
 
 app = Flask(__name__)
 
-app.config['MONGO_URI'] = f'mongodb+srv://MikeAnderson89:{password}@cluster0-wadjd.mongodb.net/test?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = f'mongodb+srv://{username}:{password}@cluster0-wadjd.mongodb.net/test?retryWrites=true&w=majority'
 mongo = PyMongo(app)
 
 
